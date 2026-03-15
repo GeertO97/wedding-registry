@@ -295,6 +295,15 @@
             border-radius: 8px;
             border: 1px solid #eee;
         }
+        .modal__bank-info {
+            font-size: 0.85rem;
+            line-height: 1.6;
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            background: #fafafa;
+        }
 
         .modal__qr-label {
             margin-top: 0.5rem;
@@ -407,12 +416,12 @@
             </article>
 
             <article class="card">
-                <div class="card__icon">&#129479;</div>
+                <div class="card__icon">&#9749;</div>
                 <div class="card__body">
-                    <h3 class="card__title">Waffle Iron</h3>
+                    <h3 class="card__title">French Press Coffee Set</h3>
                     <p class="card__amount">~ &euro;50</p>
-                    <p class="card__desc">For lazy Sunday mornings filled with homemade Belgian waffles and maple syrup.</p>
-                    <button class="card__btn" data-gift="Waffle Iron" data-amount="~ €50">Contribute</button>
+                    <p class="card__desc">For slow mornings together — freshly brewed coffee the way it's meant to taste.</p>
+                    <button class="card__btn" data-gift="French Press Coffee Set" data-amount="~ €50">Contribute</button>
                 </div>
             </article>
 
@@ -437,12 +446,12 @@
             </article>
 
             <article class="card">
-                <div class="card__icon">&#127890;</div>
+                <div class="card__icon">&#127839;</div>
                 <div class="card__body">
-                    <h3 class="card__title">Sunrise Hot Air Balloon Ride</h3>
+                    <h3 class="card__title">Ninja Air Fryer</h3>
                     <p class="card__amount">~ &euro;180</p>
-                    <p class="card__desc">Floating above the clouds together as the sun rises — a once-in-a-lifetime morning.</p>
-                    <button class="card__btn" data-gift="Sunrise Hot Air Balloon Ride" data-amount="~ €180">Contribute</button>
+                    <p class="card__desc">Crispy fries, roasted veggies, and guilt-free snacks — the kitchen gadget we never knew we needed.</p>
+                    <button class="card__btn" data-gift="Ninja Air Fryer" data-amount="~ €180">Contribute</button>
                 </div>
             </article>
 
@@ -502,12 +511,18 @@
                     <p class="modal__qr-label">Netherlands (NL)</p>
                 </div>
                 <div class="modal__qr-col">
-                    <img src="images/qr-guatemala.png" alt="QR code for Guatemalan bank account">
+                    <p class="modal__bank-info">
+                        <strong>Transferencia Guatemala (USD or GTQ):</strong><br>
+                        Banco Industrial - Cuenta de Ahorros<br>
+                        Nombre: Nathalia Maria Morales Rojas<br><br>
+                        GTQ Ahorros Cuenta: 5369237<br>
+                        USD Ahorros Cuenta: 3382364
+                    </p>
                     <p class="modal__qr-label">Guatemala (GT)</p>
                 </div>
             </div>
             <p class="modal__instructions">
-                Scan the QR code with your banking app.
+                Scan the QR code or use the bank details.
                 Any amount is appreciated &mdash; the suggested price is just a guide!
             </p>
         </div>
@@ -523,12 +538,10 @@
         const modal = document.getElementById('modal');
         const modalTitle = document.getElementById('modalTitle');
         const modalAmount = document.getElementById('modalAmount');
-        const modalGiftRef = document.getElementById('modalGiftRef');
 
         function openModal(gift, amount) {
             modalTitle.textContent = gift;
             modalAmount.textContent = 'Suggested amount: ' + amount;
-            modalGiftRef.textContent = '"' + gift + '"';
             modal.classList.add('is-open');
             document.body.style.overflow = 'hidden';
         }
